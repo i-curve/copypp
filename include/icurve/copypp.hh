@@ -2,6 +2,9 @@
 #include <string>
 #include <vector>
 #include "meta.hh"
+
+#define COPYPP_VERSION 000100
+
 namespace icurve {
 
 class _copypp_raw_meta {
