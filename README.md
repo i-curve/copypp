@@ -148,7 +148,7 @@ make install
 if you use the vcpkg, you can install it by
 
 ```
-vcpkg install icurve-copypp
+vcpkg install copypp
 ```
 
 ## License

@@ -26,10 +26,14 @@ endif()
 include(GNUInstallDirs)
 
 add_library(copypp INTERFACE)
-add_library(copypp::copypp ALIAS copypp)
+add_library(icurve::copypp ALIAS copypp)
+
 set_target_properties(
   copypp PROPERTIES VERSION ${${PROJECT_NAME}_VERSION}
                     SOVERSION ${${PROJECT_NAME}_VERSION_MAJOR})
+target_include_directories(copypp INTERFACE
+                $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+                $<INSTALL_INTERFACE:include>)
 
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/
       DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
@@ -56,7 +60,8 @@ install(FILES "${PROJECT_BINARY_DIR}/cmake/${PROJECT_NAME}Config.cmake"
   DESTINATION lib/cmake/${PROJECT_NAME})
 
 install(EXPORT ${TARGETS_EXPORT_NAME}
-  DESTINATION "${CMAKE_INSTALL_LIBDIR}/${PROJECT_NAME}")
+  NAMESPACE icurve::
+  DESTINATION "lib/cmake/${PROJECT_NAME}")
 
 if (COPYPP_TEST)
     message(STATUS "copypp tests...")
