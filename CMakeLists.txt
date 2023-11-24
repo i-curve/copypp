@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED on)
 
 set(COPYPP_MASTER_PROJECT OFF)
-option(COPYPP_TEST "build copypp tests" OFF) # 是否开启 test 开关
+# option(COPYPP_TEST "build copypp tests" OFF) # 是否开启 test 开关
 
 # message(STATUS "CMAKE_CURRENT_SOURCE_DIR" ${CMAKE_CURRENT_SOURCE_DIR})
 # message(STATUS "CMAKE_SOURCE_DIR ${CMAKE_SOURCE_DIR}")
@@ -15,7 +15,9 @@ option(COPYPP_TEST "build copypp tests" OFF) # 是否开启 test 开关
 if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
   # message(STATUS "CMAKE_CURRENT_SOURCE_DIR = CMAKE_SOURCE_DIR")
   set(COPYPP_MASTER_PROJECT ON)
-  set(COPYPP_TEST "build mathpp tests" ON)
+  if (NOT DEFINED COPYPP_TEST)
+    set(COPYPP_TEST "build mathpp tests" ON)
+  endif()
   # message(STATUS "CMake version: ${CMAKE_VERSION}")
 # else()
 #   message(STATUS "CMAKE_CURRENT_SOURCE_DIR != CMAKE_SOURCE_DIR")
