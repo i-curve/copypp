@@ -49,6 +49,9 @@ public:
 public:
     B() = default;
     B(int id, std::string name, bool sex) : id(id), name(name), sex(sex) {}
+
+public:
+    COPYPP_FIELDS_INTRUSIVE(id, name, sex)
 };
 
 class BB {

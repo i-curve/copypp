@@ -3,7 +3,7 @@
 #include <vector>
 #include "meta.hh"
 
-#define COPYPP_VERSION 000100
+#define COPYPP_VERSION 000101
 
 namespace icurve {
 
@@ -46,12 +46,10 @@ template <typename S> void Copy(std::string &destination, S &source) {}
 #define _COPYPP_META_DATA std::vector<icurve::_copypp_raw_meta> _data; bool _is_prepare = false;
 
 // 1. 写入_copypp_raw_meta
-// 2. 写入_set,_get
 // 3. 设置_prepareFields
 // 4. 设置_setField
 #define COPYPP_FIELDS_INTRUSIVE(...) \
     _COPYPP_META_DATA  \
-    _COPYPP_META_SETGET(__VA_ARGS__)  \
     _COPYPP_META_PREPARED(__VA_ARGS__)  \
     _COPYPP_META_SETFIELD(__VA_ARGS__)  \
     //

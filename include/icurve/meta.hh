@@ -134,141 +134,143 @@
         COPYPP_PASTE1)(__VA_ARGS__) \
         //
 
-#define _COPYPP_EXPANG_FUNC(v)  \
-    void _set##v(decltype(v) v) { this->v = v; }  \
-    auto _get##v() const { return this->v; }  \
-    //
-#define COPYPP_SETGET1(v1)  _COPYPP_EXPANG_FUNC(v1)
-#define COPYPP_SETGET2(v1, v2) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET1(v2)
-#define COPYPP_SETGET3(v1, v2, v3) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET2(v2, v3)
-#define COPYPP_SETGET4(v1, v2, v3, v4) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET3(v2, v3, v4)
-#define COPYPP_SETGET5(v1, v2, v3, v4, v5) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET4(v2, v3, v4, v5)
-#define COPYPP_SETGET6(v1, v2, v3, v4, v5, v6) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET5(v2, v3, v4, v5, v6)
-#define COPYPP_SETGET7(v1, v2, v3, v4, v5, v6, v7) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET6(v2, v3, v4, v5, v6, v7)
-#define COPYPP_SETGET8(v1, v2, v3, v4, v5, v6, v7, v8) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET7(v2, v3, v4, v5, v6, v7, v8)
-#define COPYPP_SETGET9(v1, v2, v3, v4, v5, v6, v7, v8, v9) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET8(v2, v3, v4, v5, v6, v7, v8, v9)
-#define COPYPP_SETGET10(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET9(v2, v3, v4, v5, v6, v7, v8, v9, v10)
-#define COPYPP_SETGET11(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET10(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11)
-#define COPYPP_SETGET12(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET11(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12)
-#define COPYPP_SETGET13(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET12(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13)
-#define COPYPP_SETGET14(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET13(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14)
-#define COPYPP_SETGET15(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET14(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15)
-#define COPYPP_SETGET16(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET15(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16)
-#define COPYPP_SETGET17(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET16(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17)
-#define COPYPP_SETGET18(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET17(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18)
-#define COPYPP_SETGET19(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET18(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19)
-#define COPYPP_SETGET20(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET19(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20)
-#define COPYPP_SETGET21(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET20(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21)
-#define COPYPP_SETGET22(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET21(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22)
-#define COPYPP_SETGET23(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET22(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23)
-#define COPYPP_SETGET24(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET23(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24)
-#define COPYPP_SETGET25(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET24(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25)
-#define COPYPP_SETGET26(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET25(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26)
-#define COPYPP_SETGET27(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET26(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27)
-#define COPYPP_SETGET28(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET27(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28)
-#define COPYPP_SETGET29(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET28(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29)
-#define COPYPP_SETGET30(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET29(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30)
-#define COPYPP_SETGET31(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET30(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31)
-#define COPYPP_SETGET32(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET31(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32)
-#define COPYPP_SETGET33(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET32(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33)
-#define COPYPP_SETGET34(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET33(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34)
-#define COPYPP_SETGET35(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET34(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35)
-#define COPYPP_SETGET36(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET35(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36)
-#define COPYPP_SETGET37(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET36(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37)
-#define COPYPP_SETGET38(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET37(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38)
-#define COPYPP_SETGET39(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET38(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39)
-#define COPYPP_SETGET40(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET39(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40)
-#define COPYPP_SETGET41(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET40(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41)
-#define COPYPP_SETGET42(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET41(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42)
-#define COPYPP_SETGET43(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET42(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43)
-#define COPYPP_SETGET44(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET43(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44)
-#define COPYPP_SETGET45(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET44(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45)
-#define COPYPP_SETGET46(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET45(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46)
-#define COPYPP_SETGET47(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET46(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47)
-#define COPYPP_SETGET48(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET47(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48)
-#define COPYPP_SETGET49(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET48(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49)
-#define COPYPP_SETGET50(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET49(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50)
-#define COPYPP_SETGET51(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET50(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51)
-#define COPYPP_SETGET52(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET51(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52)
-#define COPYPP_SETGET53(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET52(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53)
-#define COPYPP_SETGET54(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET53(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54)
-#define COPYPP_SETGET55(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET54(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55)
-#define COPYPP_SETGET56(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET55(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56)
-#define COPYPP_SETGET57(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET56(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57)
-#define COPYPP_SETGET58(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET57(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58)
-#define COPYPP_SETGET59(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET58(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59)
-#define COPYPP_SETGET60(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET59(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60)
-#define COPYPP_SETGET61(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET60(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61)
-#define COPYPP_SETGET62(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET61(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62)
-#define COPYPP_SETGET63(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET62(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63)
-#define COPYPP_SETGET64(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET63(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64)
+// @deprecated: will remove
+// #define _COPYPP_EXPANG_FUNC(v)  \
+//     void _set##v(decltype(v) v) { this->v = v; }  \
+//     auto _get##v() const { return this->v; }  \
+//     //
+// #define COPYPP_SETGET1(v1)  _COPYPP_EXPANG_FUNC(v1)
+// #define COPYPP_SETGET2(v1, v2) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET1(v2)
+// #define COPYPP_SETGET3(v1, v2, v3) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET2(v2, v3)
+// #define COPYPP_SETGET4(v1, v2, v3, v4) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET3(v2, v3, v4)
+// #define COPYPP_SETGET5(v1, v2, v3, v4, v5) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET4(v2, v3, v4, v5)
+// #define COPYPP_SETGET6(v1, v2, v3, v4, v5, v6) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET5(v2, v3, v4, v5, v6)
+// #define COPYPP_SETGET7(v1, v2, v3, v4, v5, v6, v7) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET6(v2, v3, v4, v5, v6, v7)
+// #define COPYPP_SETGET8(v1, v2, v3, v4, v5, v6, v7, v8) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET7(v2, v3, v4, v5, v6, v7, v8)
+// #define COPYPP_SETGET9(v1, v2, v3, v4, v5, v6, v7, v8, v9) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET8(v2, v3, v4, v5, v6, v7, v8, v9)
+// #define COPYPP_SETGET10(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET9(v2, v3, v4, v5, v6, v7, v8, v9, v10)
+// #define COPYPP_SETGET11(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET10(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11)
+// #define COPYPP_SETGET12(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET11(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12)
+// #define COPYPP_SETGET13(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET12(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13)
+// #define COPYPP_SETGET14(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET13(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14)
+// #define COPYPP_SETGET15(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET14(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15)
+// #define COPYPP_SETGET16(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET15(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16)
+// #define COPYPP_SETGET17(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET16(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17)
+// #define COPYPP_SETGET18(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET17(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18)
+// #define COPYPP_SETGET19(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET18(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19)
+// #define COPYPP_SETGET20(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET19(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20)
+// #define COPYPP_SETGET21(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET20(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21)
+// #define COPYPP_SETGET22(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET21(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22)
+// #define COPYPP_SETGET23(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET22(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23)
+// #define COPYPP_SETGET24(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET23(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24)
+// #define COPYPP_SETGET25(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET24(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25)
+// #define COPYPP_SETGET26(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET25(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26)
+// #define COPYPP_SETGET27(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET26(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27)
+// #define COPYPP_SETGET28(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET27(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28)
+// #define COPYPP_SETGET29(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET28(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29)
+// #define COPYPP_SETGET30(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET29(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30)
+// #define COPYPP_SETGET31(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET30(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31)
+// #define COPYPP_SETGET32(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET31(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32)
+// #define COPYPP_SETGET33(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET32(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33)
+// #define COPYPP_SETGET34(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET33(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34)
+// #define COPYPP_SETGET35(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET34(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35)
+// #define COPYPP_SETGET36(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET35(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36)
+// #define COPYPP_SETGET37(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET36(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37)
+// #define COPYPP_SETGET38(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET37(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38)
+// #define COPYPP_SETGET39(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET38(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39)
+// #define COPYPP_SETGET40(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET39(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40)
+// #define COPYPP_SETGET41(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET40(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41)
+// #define COPYPP_SETGET42(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET41(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42)
+// #define COPYPP_SETGET43(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET42(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43)
+// #define COPYPP_SETGET44(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET43(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44)
+// #define COPYPP_SETGET45(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET44(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45)
+// #define COPYPP_SETGET46(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET45(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46)
+// #define COPYPP_SETGET47(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET46(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47)
+// #define COPYPP_SETGET48(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET47(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48)
+// #define COPYPP_SETGET49(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET48(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49)
+// #define COPYPP_SETGET50(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET49(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50)
+// #define COPYPP_SETGET51(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET50(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51)
+// #define COPYPP_SETGET52(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET51(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52)
+// #define COPYPP_SETGET53(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET52(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53)
+// #define COPYPP_SETGET54(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET53(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54)
+// #define COPYPP_SETGET55(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET54(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55)
+// #define COPYPP_SETGET56(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET55(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56)
+// #define COPYPP_SETGET57(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET56(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57)
+// #define COPYPP_SETGET58(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET57(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58)
+// #define COPYPP_SETGET59(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET58(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59)
+// #define COPYPP_SETGET60(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET59(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60)
+// #define COPYPP_SETGET61(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET60(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61)
+// #define COPYPP_SETGET62(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET61(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62)
+// #define COPYPP_SETGET63(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET62(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63)
+// #define COPYPP_SETGET64(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64) _COPYPP_EXPANG_FUNC(v1)  COPYPP_SETGET63(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64)
 
-#define _COPYPP_META_SETGET(...) _COPYPP_GET_MACRO(__VA_ARGS__, \
-        COPYPP_SETGET64,  \
-        COPYPP_SETGET63,  \
-        COPYPP_SETGET62,  \
-        COPYPP_SETGET61,  \
-        COPYPP_SETGET60,  \
-        COPYPP_SETGET59,  \
-        COPYPP_SETGET58,  \
-        COPYPP_SETGET57,  \
-        COPYPP_SETGET56,  \
-        COPYPP_SETGET55,  \
-        COPYPP_SETGET54,  \
-        COPYPP_SETGET53,  \
-        COPYPP_SETGET52,  \
-        COPYPP_SETGET51,  \
-        COPYPP_SETGET50,  \
-        COPYPP_SETGET49,  \
-        COPYPP_SETGET48,  \
-        COPYPP_SETGET47,  \
-        COPYPP_SETGET46,  \
-        COPYPP_SETGET45,  \
-        COPYPP_SETGET44,  \
-        COPYPP_SETGET43,  \
-        COPYPP_SETGET42,  \
-        COPYPP_SETGET41,  \
-        COPYPP_SETGET40,  \
-        COPYPP_SETGET39,  \
-        COPYPP_SETGET38,  \
-        COPYPP_SETGET37,  \
-        COPYPP_SETGET36,  \
-        COPYPP_SETGET35,  \
-        COPYPP_SETGET34,  \
-        COPYPP_SETGET33,  \
-        COPYPP_SETGET32,  \
-        COPYPP_SETGET31,  \
-        COPYPP_SETGET30,  \
-        COPYPP_SETGET29,  \
-        COPYPP_SETGET28,  \
-        COPYPP_SETGET27,  \
-        COPYPP_SETGET26,  \
-        COPYPP_SETGET25,  \
-        COPYPP_SETGET24,  \
-        COPYPP_SETGET23,  \
-        COPYPP_SETGET22,  \
-        COPYPP_SETGET21,  \
-        COPYPP_SETGET20,  \
-        COPYPP_SETGET19,  \
-        COPYPP_SETGET18,  \
-        COPYPP_SETGET17,  \
-        COPYPP_SETGET16,  \
-        COPYPP_SETGET15,  \
-        COPYPP_SETGET14,  \
-        COPYPP_SETGET13,  \
-        COPYPP_SETGET12,  \
-        COPYPP_SETGET11,  \
-        COPYPP_SETGET10,  \
-        COPYPP_SETGET9,  \
-        COPYPP_SETGET8,  \
-        COPYPP_SETGET7,  \
-        COPYPP_SETGET6,  \
-        COPYPP_SETGET5,  \
-        COPYPP_SETGET4,  \
-        COPYPP_SETGET3,  \
-        COPYPP_SETGET2,  \
-        COPYPP_SETGET1)(__VA_ARGS__)  \
-    //
+// @deprecated: will remove
+// #define _COPYPP_META_SETGET(...) _COPYPP_GET_MACRO(__VA_ARGS__, \
+//         COPYPP_SETGET64,  \
+//         COPYPP_SETGET63,  \
+//         COPYPP_SETGET62,  \
+//         COPYPP_SETGET61,  \
+//         COPYPP_SETGET60,  \
+//         COPYPP_SETGET59,  \
+//         COPYPP_SETGET58,  \
+//         COPYPP_SETGET57,  \
+//         COPYPP_SETGET56,  \
+//         COPYPP_SETGET55,  \
+//         COPYPP_SETGET54,  \
+//         COPYPP_SETGET53,  \
+//         COPYPP_SETGET52,  \
+//         COPYPP_SETGET51,  \
+//         COPYPP_SETGET50,  \
+//         COPYPP_SETGET49,  \
+//         COPYPP_SETGET48,  \
+//         COPYPP_SETGET47,  \
+//         COPYPP_SETGET46,  \
+//         COPYPP_SETGET45,  \
+//         COPYPP_SETGET44,  \
+//         COPYPP_SETGET43,  \
+//         COPYPP_SETGET42,  \
+//         COPYPP_SETGET41,  \
+//         COPYPP_SETGET40,  \
+//         COPYPP_SETGET39,  \
+//         COPYPP_SETGET38,  \
+//         COPYPP_SETGET37,  \
+//         COPYPP_SETGET36,  \
+//         COPYPP_SETGET35,  \
+//         COPYPP_SETGET34,  \
+//         COPYPP_SETGET33,  \
+//         COPYPP_SETGET32,  \
+//         COPYPP_SETGET31,  \
+//         COPYPP_SETGET30,  \
+//         COPYPP_SETGET29,  \
+//         COPYPP_SETGET28,  \
+//         COPYPP_SETGET27,  \
+//         COPYPP_SETGET26,  \
+//         COPYPP_SETGET25,  \
+//         COPYPP_SETGET24,  \
+//         COPYPP_SETGET23,  \
+//         COPYPP_SETGET22,  \
+//         COPYPP_SETGET21,  \
+//         COPYPP_SETGET20,  \
+//         COPYPP_SETGET19,  \
+//         COPYPP_SETGET18,  \
+//         COPYPP_SETGET17,  \
+//         COPYPP_SETGET16,  \
+//         COPYPP_SETGET15,  \
+//         COPYPP_SETGET14,  \
+//         COPYPP_SETGET13,  \
+//         COPYPP_SETGET12,  \
+//         COPYPP_SETGET11,  \
+//         COPYPP_SETGET10,  \
+//         COPYPP_SETGET9,  \
+//         COPYPP_SETGET8,  \
+//         COPYPP_SETGET7,  \
+//         COPYPP_SETGET6,  \
+//         COPYPP_SETGET5,  \
+//         COPYPP_SETGET4,  \
+//         COPYPP_SETGET3,  \
+//         COPYPP_SETGET2,  \
+//         COPYPP_SETGET1)(__VA_ARGS__)  \
+//     //
 #define _COPYPP_EXPANG_DATA(v) this->_data.push_back(icurve::_copypp_raw_meta(typeid(v).name(), #v, sizeof(v), &v));
 #define COPYPP_PREPARE1(v1) _COPYPP_EXPANG_DATA(v1)
 #define COPYPP_PREPARE2(v1, v2) _COPYPP_EXPANG_DATA(v1) COPYPP_PREPARE1(v2)
@@ -409,9 +411,8 @@
     //
 
 #define _COPYPP_EXPANG_SETFIELD(v)  \
-    } else if (name == #v) {  \
-        _set##v(*static_cast<decltype(v) *>(val));  \
-        //
+    else if (name == #v) { this->v = *static_cast<decltype(v) *>(val); }  \
+    //
 #define COPYPP_SETFIELD1(v1) _COPYPP_EXPANG_SETFIELD(v1)
 #define COPYPP_SETFIELD2(v1, v2) _COPYPP_EXPANG_SETFIELD(v1) COPYPP_SETFIELD1(v2)
 #define COPYPP_SETFIELD3(v1, v2, v3) _COPYPP_EXPANG_SETFIELD(v1) COPYPP_SETFIELD2(v2, v3)
@@ -480,7 +481,7 @@
 
 #define _COPYPP_META_SETFIELD(...)  \
     void _setField(std::string name, void *val) {  \
-    if (1 == 0) {  \
+    if (val == nullptr) { return; }  \
     _COPYPP_GET_MACRO(__VA_ARGS__,  \
         COPYPP_SETFIELD64,  \
         COPYPP_SETFIELD63,  \
@@ -546,6 +547,6 @@
         COPYPP_SETFIELD3,  \
         COPYPP_SETFIELD2,  \
         COPYPP_SETFIELD1)(__VA_ARGS__);  \
-    }}   \
+    }   \
     //
 // clang-format on
