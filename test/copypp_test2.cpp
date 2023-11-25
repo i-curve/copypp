@@ -22,9 +22,10 @@ int main() {
 }
 
 void check(BB &b, AA &a) {
-    // assert(a.getId() == b.getId());
-    // assert(a.getName() == b.getName());
-    // assert(a.getSex() == b.getSex());
+    assert(a.getId() == b.getId());
+    fmt::println("a.name: {}, b.name: {}", a.getName(), b.getName());
+    assert(a.getName() == b.getName());
+    assert(a.getSex() == b.getSex());
 }
 
 void check1() {
@@ -42,9 +43,9 @@ void check2() {
     BB b;
     icurve::copy(b, a);
     check(b, a);
-    fmt::println("a: id: {}, name: {}, sex: {}", a._getid(), a._getname(),
-                 a._getsex());
-    fmt::println("b: id: {}, name: {}, sex: {}", b._getid(), b._getname(),
-                 b._getsex());
+    fmt::println("a: id: {}, name: {}, sex: {}", a.getId(), a.getName(),
+                 a.getSex());
+    fmt::println("b: id: {}, name: {}, sex: {}", b.getId(), b.getName(),
+                 b.getSex());
     fmt::println("check2 ok");
 }

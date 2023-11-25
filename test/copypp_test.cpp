@@ -21,14 +21,14 @@ void check(B &b, A &a) {
 
 void checkaa() {
     AA aa(12, "i-curve", true);
-    assert(aa._getid() == 12);
-    assert(aa._getname() == "i-curve");
-    assert(aa._getsex() == true);
-    aa._setid(5);
-    assert(aa._getid() == 5);
-    aa._setname("xxx");
-    fmt::println("aa.id: {}, aa.name: {}, aa.sex: {}", aa._getid(),
-                 aa._getname(), aa._getsex());
+    assert(aa.getId() == 12);
+    assert(aa.getName() == "i-curve");
+    assert(aa.getSex() == true);
+    aa.setId(5);
+    assert(aa.getId() == 5);
+    aa.setName("xxx");
+    fmt::println("aa.id: {}, aa.name: {}, aa.sex: {}", aa.getId(), aa.getName(),
+                 aa.getSex());
     fmt::println("checkaa ok.");
 }
 
