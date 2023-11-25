@@ -1,4 +1,8 @@
 #pragma once
+#if __cplusplus < 201402L
+#error "minimun c++ version is c++14."
+#endif
+
 #include <string>
 #include <vector>
 #include "meta.hh"
