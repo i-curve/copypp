@@ -19,3 +19,11 @@ add_executable(copypp_only_test copypp_only_test.cpp)
 target_link_libraries(copypp_only_test PRIVATE fmt::fmt-header-only)
 target_link_directories(copypp_only_test PUBLIC ${PROJECT_SOURCE_DIR}/include)
 add_test(NAME copypp_only_test COMMAND copypp_only_test)
+
+
+find_package(GTest CONFIG REQUIRED)
+
+add_executable(copypp_test3 copypp_test3.cpp)
+target_link_libraries(copypp_test3 PRIVATE GTest::gtest GTest::gtest_main)
+target_link_directories(copypp_test3 PUBLIC ${PROJECT_SOURCE_DIR}/include)
+add_test(NAME copypp_test3 COMMAND copypp_test3)

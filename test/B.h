@@ -3,9 +3,9 @@
 
 class B {
 public:
-    int id;
-    std::string name;
-    bool sex;
+    int id = 0;
+    std::string name = "";
+    bool sex = false;
 
 public:
     B() = default;
