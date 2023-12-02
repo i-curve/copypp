@@ -58,11 +58,9 @@ template <typename S> void Copy(std::string &destination, S &source) {}
     _COPYPP_META_SETFIELD(__VA_ARGS__)  \
     //
 
-// #define COPYPP_EXPAND(x) x
-
 #define COPYPP_FIELDS_NON_INTRUSIVE(D, S, ...)  \
     template<> void icurve::copy(D &destination, S &source) {  \
-        _COPYPP_PASTE(__VA_ARGS__)  \
+        _COPYPP_META_PASTE(__VA_ARGS__)  \
     } \
     // 非侵入式
 // clang-format on
