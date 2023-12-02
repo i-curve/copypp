@@ -1,5 +1,7 @@
 #pragma once
-#if __cplusplus < 201402L
+#if _MSC_VER && _MSVC_LANG < 201402L
+#error "minimun c++ version is c++14."
+#elif __cplusplus < 201402L
 #error "minimun c++ version is c++14."
 #endif
 

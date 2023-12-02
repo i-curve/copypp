@@ -1,12 +1,17 @@
 #pragma once
-#if __cplusplus < 201402L
+#if _MSC_VER && _MSVC_LANG < 201402L
+#error "minimun c++ version is c++14."
+#elif __cplusplus < 201402L
 #error "minimun c++ version is c++14."
 #endif
+
+#define COPYPP_VERSION 000101
 
 #include <string>
 #include <vector>
 // clang-format off
 #define _COPYPP_GET_MACRO(_1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40, _41, _42, _43, _44, _45, _46, _47, _48, _49, _50, _51, _52, _53, _54, _55, _56, _57, _58, _59, _60, _61, _62, _63, _64, NAME,...) NAME
+#define _COPYPP_EXPAND(x) x
 
 #define _COPYPP_PASTE0()
 #define _COPYPP_PASTE1(v1) destination.v1 = source.v1;
@@ -74,7 +79,7 @@
 #define _COPYPP_PASTE63(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63) destination.v1 = source.v1; _COPYPP_PASTE62(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63)
 #define _COPYPP_PASTE64(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64) destination.v1 = source.v1; _COPYPP_PASTE63(v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64)
 
-#define _COPYPP_META_PASTE(...) _COPYPP_GET_MACRO(__VA_ARGS__, \
+#define _COPYPP_META_PASTE(...) _COPYPP_EXPAND(_COPYPP_GET_MACRO(__VA_ARGS__, \
         _COPYPP_PASTE64, \
         _COPYPP_PASTE63, \
         _COPYPP_PASTE62, \
@@ -139,7 +144,7 @@
         _COPYPP_PASTE3, \
         _COPYPP_PASTE2, \
         _COPYPP_PASTE1, \
-        _COPYPP_PASTE0)(__VA_ARGS__) \
+        _COPYPP_PASTE0)(__VA_ARGS__)) \
         //
 
 
@@ -214,7 +219,7 @@
 #define _COPYPP_META_PREPARED(...) \
         void _prepareFields() {  \
         if (this->_is_prepare) {  return;  }  \
-        _COPYPP_GET_MACRO(__VA_ARGS__, \
+        _COPYPP_EXPAND(_COPYPP_GET_MACRO(__VA_ARGS__, \
         _COPYPP_PREPARE64,  \
         _COPYPP_PREPARE63,  \
         _COPYPP_PREPARE62,  \
@@ -279,7 +284,7 @@
         _COPYPP_PREPARE3,  \
         _COPYPP_PREPARE2,  \
         _COPYPP_PREPARE1,  \
-        _COPYPP_PREPARE0)(__VA_ARGS__)   \
+        _COPYPP_PREPARE0)(__VA_ARGS__))   \
         this->_is_prepare = true;  \
         return;  \
         }  \
@@ -359,7 +364,7 @@
 #define _COPYPP_META_SETFIELD(...)  \
     void _setField(std::string name, void *val) {  \
     if (val == nullptr) { return; }  \
-    _COPYPP_GET_MACRO(__VA_ARGS__,  \
+    _COPYPP_EXPAND(_COPYPP_GET_MACRO(__VA_ARGS__,  \
         _COPYPP_SETFIELD64,  \
         _COPYPP_SETFIELD63,  \
         _COPYPP_SETFIELD62,  \
@@ -424,7 +429,7 @@
         _COPYPP_SETFIELD3,  \
         _COPYPP_SETFIELD2,  \
         _COPYPP_SETFIELD1,  \
-        _COPYPP_SETFIELD0)(__VA_ARGS__);  \
+        _COPYPP_SETFIELD0)(__VA_ARGS__))  \
     }   \
     //
 
