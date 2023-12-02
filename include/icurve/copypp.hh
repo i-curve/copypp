@@ -9,7 +9,7 @@
 #include <vector>
 #include "meta.hh"
 
-#define COPYPP_VERSION 000101
+#define COPYPP_VERSION 000102
 
 namespace icurve {
 

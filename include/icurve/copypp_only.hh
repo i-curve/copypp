@@ -5,7 +5,7 @@
 #error "minimun c++ version is c++14."
 #endif
 
-#define COPYPP_VERSION 000101
+#define COPYPP_VERSION 000102
 
 #include <string>
 #include <vector>
