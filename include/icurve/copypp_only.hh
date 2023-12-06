@@ -10,14 +10,10 @@
 #include <string>
 #include <vector>
 // clang-format off
-#ifdef NLOHMANN_DEFINE_TYPE_INTRUSIVE // 如果引入了nlohamnn_json
-#define _COPYPP_NLOHMANN_JSON_FROM(v1) if (nlohmann_json_j.contains(#v1)) nlohmann_json_j.at(#v1).get_to(nlohmann_json_t.v1);
-#define _COPYPP_JSON(Type, ...) \
-    friend void to_json(nlohmann::json& nlohmann_json_j, const Type& nlohmann_json_t) { NLOHMANN_JSON_EXPAND(NLOHMANN_JSON_PASTE(NLOHMANN_JSON_TO, __VA_ARGS__)) } \
-    friend void from_json(const nlohmann::json& nlohmann_json_j, Type& nlohmann_json_t) { NLOHMANN_JSON_EXPAND(NLOHMANN_JSON_PASTE(_COPYPP_NLOHMANN_JSON_FROM, __VA_ARGS__)) }
-#else
-#define _COPYPP_JSON(...)
+#ifndef NLOHMANN_DEFINE_TYPE_INTRUSIVE_WITH_DEFAULT
+#define NLOHMANN_DEFINE_TYPE_INTRUSIVE_WITH_DEFAULT(...)
 #endif
+
 
 #define _COPYPP_GET_MACRO(_1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40, _41, _42, _43, _44, _45, _46, _47, _48, _49, _50, _51, _52, _53, _54, _55, _56, _57, _58, _59, _60, _61, _62, _63, _64, NAME,...) NAME
 #define _COPYPP_EXPAND(x) x
@@ -496,7 +492,7 @@ template <typename S> void copy(std::string &destination, S &source) {
     _COPYPP_META_DATA  \
     _COPYPP_META_PREPARED(__VA_ARGS__)  \
     _COPYPP_META_SETFIELD(__VA_ARGS__)  \
-    _COPYPP_JSON(TYPE, __VA_ARGS__)  \
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE_WITH_DEFAULT(TYPE, __VA_ARGS__)  \
     //
 
 #define COPYPP_FIELDS_NON_INTRUSIVE(D, S, ...)  \

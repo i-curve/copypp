@@ -10,15 +10,9 @@
 #include <string>
 #include <vector>
 #include "meta.hh"
-#ifdef NLOHMANN_DEFINE_TYPE_INTRUSIVE // 如果引入了nlohamnn_json
-// clang-format off
-#define _COPYPP_NLOHMANN_JSON_FROM(v1) if (nlohmann_json_j.contains(#v1)) nlohmann_json_j.at(#v1).get_to(nlohmann_json_t.v1);
-#define _COPYPP_JSON(Type, ...) \
-    friend void to_json(nlohmann::json& nlohmann_json_j, const Type& nlohmann_json_t) { NLOHMANN_JSON_EXPAND(NLOHMANN_JSON_PASTE(NLOHMANN_JSON_TO, __VA_ARGS__)) } \
-    friend void from_json(const nlohmann::json& nlohmann_json_j, Type& nlohmann_json_t) { NLOHMANN_JSON_EXPAND(NLOHMANN_JSON_PASTE(_COPYPP_NLOHMANN_JSON_FROM, __VA_ARGS__)) }
-// clang-format on
-#else
-#define _COPYPP_JSON(...)
+
+#ifndef NLOHMANN_DEFINE_TYPE_INTRUSIVE_WITH_DEFAULT
+#define NLOHMANN_DEFINE_TYPE_INTRUSIVE_WITH_DEFAULT(...)
 #endif
 
 namespace icurve {
@@ -76,7 +70,7 @@ template <typename S> void copy(std::string &destination, S &source) {
     _COPYPP_META_DATA  \
     _COPYPP_META_PREPARED(__VA_ARGS__)  \
     _COPYPP_META_SETFIELD(__VA_ARGS__)  \
-    _COPYPP_JSON(TYPE, __VA_ARGS__)  \
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE_WITH_DEFAULT(TYPE, __VA_ARGS__)  \
     //
 
 #define COPYPP_FIELDS_NON_INTRUSIVE(D, S, ...)  \
