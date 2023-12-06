@@ -32,7 +32,7 @@ public:
     auto getSex() const { return this->sex; }
 
 public:
-    COPYPP_FIELDS_INTRUSIVE(id, name, sex)
+    COPYPP_FIELDS_INTRUSIVE(AA, id, name, sex)
     // void _prepareFields() {
     //     if (this->_is_prepare) {
     //         return;

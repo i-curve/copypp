@@ -89,7 +89,7 @@ public:
     AA() = default;
     AA(int id, std::string name, bool sex) : id(id), name(name), sex(sex) {}
 public:
-    COPYPP_FIELDS_INTRUSIVE(id, name, sex)
+    COPYPP_FIELDS_INTRUSIVE(AA, id, name, sex)
 };
 class BB {
 private:
@@ -101,7 +101,7 @@ public:
     BB() = default;
     BB(int id, std::string name, bool sex) : id(id), name(name), sex(sex) {}
 public:
-    COPYPP_FIELDS_INTRUSIVE(id, name, sex)
+    COPYPP_FIELDS_INTRUSIVE(BB, id, name, sex)
 };
 ```
 

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(copypp VERSION 0.1.2 LANGUAGES CXX)
+project(copypp VERSION 0.2.0 LANGUAGES CXX)
 
 # set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 set(CMAKE_CXX_STANDARD 14)

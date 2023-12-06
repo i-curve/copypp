@@ -37,7 +37,7 @@ public:
     auto getSex() const { return this->sex; }
 
 public:
-    COPYPP_FIELDS_INTRUSIVE(id, name, sex)
+    COPYPP_FIELDS_INTRUSIVE(AA, id, name, sex)
 };
 
 class B {
@@ -51,7 +51,7 @@ public:
     B(int id, std::string name, bool sex) : id(id), name(name), sex(sex) {}
 
 public:
-    COPYPP_FIELDS_INTRUSIVE(id, name, sex)
+    COPYPP_FIELDS_INTRUSIVE(B, id, name, sex)
 };
 
 class BB {
@@ -72,7 +72,7 @@ public:
     auto getSex() const { return this->sex; }
 
 public:
-    COPYPP_FIELDS_INTRUSIVE(id, name, sex)
+    COPYPP_FIELDS_INTRUSIVE(BB, id, name, sex)
 };
 
 COPYPP_FIELDS_NON_INTRUSIVE(B, A, id, name, sex)
