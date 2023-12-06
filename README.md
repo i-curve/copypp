@@ -25,6 +25,7 @@ c++14 (**recommend c++20**)
 
 - COPYPP_FIELDS_NON_INTRUSIVE(destination, source, field1, field2, ...) is to be defined inside the namespace of the class/struct to create code for.
 - COPYPP_FIELDS_INTRUSIVE(field1, field2, field3, ...) is to be defined outside the namespace of class/struct to create code for. This macro can also access private members.
+- copy between json string and struct
 
 include the header file
 
@@ -109,6 +110,26 @@ public:
 AA a(10, "curve", true);
 BB b;
 icurve::copy(b, a);
+```
+
+COPY JSON string
+
+copypp support copy between json's string and struct, this copy depency [nlohmann-json](https://github.com/nlohmann/json) library, so you need
+
+1. install the nlohmann-json lib
+2. add `#include <nlohmann-json>` before the copypp header `#include <icurve/copypp.hh>` file
+3. use COPYPP_FIELDS_INTRUSIVE defination method
+
+```c++
+#include <nlohmann/json.hpp>
+#include "copypp_only.h"
+
+void func() {
+    BB b;
+    std::string s = R"({"id":5,"name":"i-curve", "age": 25})";
+    icurve::copy(b, s); // copy from string to struct
+    icurve::copy(s, b); // copy from struct to string
+}
 ```
 
 ## Integration
