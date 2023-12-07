@@ -1,6 +1,7 @@
 # COPYPP
 
-[![CMake on multiple platforms](https://github.com/i-curve/copypp/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/i-curve/copypp/actions/workflows/cmake-multi-platform.yml)
+[![cMake on multiple platforms](https://github.com/i-curve/copypp/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/i-curve/copypp/actions/workflows/cmake-multi-platform.yml)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/nlohmann/json/master/LICENSE.MIT)
 
 support field copy in different c++ struct.
 
