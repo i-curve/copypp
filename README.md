@@ -1,5 +1,7 @@
 # COPYPP
 
+[![CMake on multiple platforms](https://github.com/i-curve/copypp/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/i-curve/copypp/actions/workflows/cmake-multi-platform.yml)
+
 support field copy in different c++ struct.
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
