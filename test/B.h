@@ -31,27 +31,4 @@ public:
 
 public:
     COPYPP_FIELDS_INTRUSIVE(BB, id, name, sex)
-    // void _prepareFields() {
-    //     if (this->_is_prepare) {
-    //         return;
-    //     }
-    //     this->_data.push_back(
-    //         _copypp_raw_meta(typeid(id).name(), "id", sizeof(id), &id));
-    //     this->_data.push_back(
-    //         _copypp_raw_meta(typeid(name).name(), "name", sizeof(name),
-    //         &name));
-    //     this->_data.push_back(
-    //         _copypp_raw_meta(typeid(sex).name(), "sex", sizeof(sex), &sex));
-    //     return;
-    // }
-    // void _setField(std::string name, void *val) {
-    //     if (1 == 0) {
-    //     } else if (name == "id") {
-    //         _setid(*static_cast<decltype(id) *>(val));
-    //     } else if (name == "name") {
-    //         _setname(*static_cast<decltype(name) *>(val));
-    //     } else if (name == "sex") {
-    //         _setsex(*static_cast<decltype(sex) *>(val));
-    //     }
-    // }
 };

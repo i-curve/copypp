@@ -9,6 +9,9 @@
 
 #include <string>
 #include <vector>
+#if (_MSC_VER && _MSVC_LANG >= 201703L) || __cplusplus >= 202002L
+#include <span>
+#endif
 // clang-format off
 #ifndef NLOHMANN_DEFINE_TYPE_INTRUSIVE_WITH_DEFAULT
 #define NLOHMANN_DEFINE_TYPE_INTRUSIVE_WITH_DEFAULT(...)
@@ -468,6 +471,36 @@ template <typename D, typename S> void copy(D &destination, S &source) {
         }
     }
 }
+
+template <typename D, size_t L1, typename S, size_t L2>
+void copy(std::array<D, L1> &destination, std::array<S, L2> &source) {
+    size_t len = std::min(L1, L2);
+    for (int i = 0; i < len; i++) {
+        icurve::copy(destination[i], source[i]);
+    }
+}
+
+#if (_MSC_VER && _MSVC_LANG >= 201703L) || __cplusplus >= 202002L
+template <typename D, size_t L1, typename S, size_t L2>
+void copy(std::span<D, L1> destination, std::span<S, L2> source) {
+    size_t len = std::min(L1, L2);
+    for (int i = 0; i < len; i++) {
+        icurve::copy(destination[i], source[i]);
+    }
+}
+
+template <typename D, typename S>
+void copy(std::vector<D> &destination, std::vector<S> &source) {
+    destination.clear();
+    if (source.empty())
+        return;
+    for (auto &item : source) {
+        D tmp;
+        copy(tmp, item);
+        destination.push_back(tmp);
+    }
+}
+#endif
 
 #ifdef NLOHMANN_DEFINE_TYPE_INTRUSIVE
 // copy josn string to struct.

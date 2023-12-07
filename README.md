@@ -9,6 +9,9 @@ support field copy in different c++ struct.
 - [COPYPP](#copypp)
   - [Required](#required)
   - [Usage](#usage)
+    - [struct](#struct)
+    - [COPY JSON string](#copy-json-string)
+    - [array copy](#array-copy)
   - [Integration](#integration)
     - [copy the single header file](#copy-the-single-header-file)
     - [cmake](#cmake)
@@ -26,6 +29,7 @@ c++14 (**recommend c++20**)
 - COPYPP_FIELDS_NON_INTRUSIVE(destination, source, field1, field2, ...) is to be defined inside the namespace of the class/struct to create code for.
 - COPYPP_FIELDS_INTRUSIVE(field1, field2, field3, ...) is to be defined outside the namespace of class/struct to create code for. This macro can also access private members.
 - copy between json string and struct
+- support array copy
 
 include the header file
 
@@ -33,8 +37,9 @@ include the header file
 #include <icurve/copypp.hh>
 ```
 
-COPYPP_FIELDS_NON_INTRUSIVE:
+### struct
 
+COPYPP_FIELDS_NON_INTRUSIVE
 defination the need to copy class
 
 ```c++
@@ -77,6 +82,7 @@ icurve::copy(b, a);
 ```
 
 COPYPP_FIELDS_INTRUSIVE:
+
 defination the class
 
 ```c++
@@ -112,7 +118,7 @@ BB b;
 icurve::copy(b, a);
 ```
 
-COPY JSON string
+### COPY JSON string
 
 copypp support copy between json's string and struct, this copy depency [nlohmann-json](https://github.com/nlohmann/json) library, so you need
 
@@ -130,6 +136,41 @@ void func() {
     icurve::copy(b, s); // copy from string to struct
     icurve::copy(s, b); // copy from struct to string
 }
+```
+
+### array copy
+
+c style array, you need to delivery the array message
+
+```c++
+AA a[3];
+BB b[2] = {BB(1, "first", true), BB(2, "second", false)};
+icurve::copy<AA, 3, BB, 2>(a, b);
+```
+
+c++ array
+
+```c++
+std::array<AA,3> a;
+std::array<BB, 2> b = {BB(1, "first", true), BB(2, "second", false)};
+icurve::copy(a, b);
+```
+
+c++20 span
+note: the minimum c++ standard is c++20
+
+```c++
+AA a[3];
+BB b[2] = {BB(1, "first", true), BB(2, "second", false)};
+icurve::copy(std::span<AA>(a), std::span<BB>(b));
+```
+
+If it's vector, you can directly use it.
+
+```c++
+vector<AA> a;
+vector<BB> b = {BB(1, "first", true), BB(2, "second", false)};
+icurve::copy(a, b);
 ```
 
 ## Integration

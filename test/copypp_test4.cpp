@@ -34,3 +34,39 @@ TEST(copypp_test, two) {
     EXPECT_TRUE(a.getSex() == true);
     cout << a.getId() << ", " << a.getName() << "," << a.getSex() << endl;
 }
+
+TEST(copypp_test, three) {
+    AA a[3];
+    BB b[2] = {BB(1, "first", true), BB(2, "second", false)};
+    icurve::copy<AA, 3, BB, 2>(a, b);
+    // icurve::copy(std::span<AA>(a, 3), std::span<BB>(b, 2));
+    // icurve::copy(std::span<AA>(a), std::span<BB>(b));
+    for (int i = 0; i < 2; i++) {
+        EXPECT_TRUE(a[i].getId() == b[i].getId());
+        EXPECT_TRUE(a[i].getName() == b[i].getName());
+        EXPECT_TRUE(a[i].getSex() == b[i].getSex());
+    }
+    // std::span<AA, 3>(a);
+}
+
+TEST(copypp_test, four) {
+    vector<AA> a;
+    vector<BB> b = {BB(1, "first", true), BB(2, "second", false)};
+    icurve::copy(a, b);
+    for (int i = 0; i < 2; i++) {
+        EXPECT_TRUE(a[i].getId() == b[i].getId());
+        EXPECT_TRUE(a[i].getName() == b[i].getName());
+        EXPECT_TRUE(a[i].getSex() == b[i].getSex());
+    }
+}
+
+TEST(copypp_test, five) {
+    std::array<AA, 2> a;
+    std::array<BB, 3> b = {BB(1, "first", true), BB(2, "second", false)};
+    icurve::copy(a, b);
+    for (int i = 0; i < 2; i++) {
+        EXPECT_TRUE(a[i].getId() == b[i].getId());
+        EXPECT_TRUE(a[i].getName() == b[i].getName());
+        EXPECT_TRUE(a[i].getSex() == b[i].getSex());
+    }
+}

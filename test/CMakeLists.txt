@@ -1,6 +1,7 @@
 # find_package
 find_package(fmt)
 find_package(nlohmann_json CONFIG REQUIRED)
+set(CMAKE_CXX_STANDARD 20)
 
 message(STATUS "test")
 include_directories(${PROJECT_SOURCE_DIR}/include)
