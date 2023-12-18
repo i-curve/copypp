@@ -473,6 +473,14 @@ template <typename D, typename S> void copy(D &destination, S &source) {
 }
 
 template <typename D, size_t L1, typename S, size_t L2>
+void copy(D (&destination)[L1], S (&source)[L2]) {
+    size_t len = std::min(L1, L2);
+    for (int i = 0; i < len; i++) {
+        icurve::copy(destination[i], source[i]);
+    }
+}
+
+template <typename D, size_t L1, typename S, size_t L2>
 void copy(std::array<D, L1> &destination, std::array<S, L2> &source) {
     size_t len = std::min(L1, L2);
     for (int i = 0; i < len; i++) {

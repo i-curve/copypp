@@ -33,3 +33,8 @@ add_executable(copypp_test4 copypp_test4.cpp)
 target_link_libraries(copypp_test4 PRIVATE GTest::gtest GTest::gtest_main)
 target_link_directories(copypp_test4 PUBLIC ${PROJECT_SOURCE_DIR}/include)
 add_test(NAME copypp_test4 COMMAND copypp_test4)
+
+add_executable(copypp_array_test copypp_array_test.cpp)
+target_link_libraries(copypp_array_test PRIVATE GTest::gtest GTest::gtest_main)
+target_link_directories(copypp_array_test PUBLIC ${PROJECT_SOURCE_DIR}/include)
+add_test(NAME copypp_array_test COMMAND copypp_array_test)
