@@ -25,7 +25,7 @@ support field copy in different c++ struct.
 
 ## Required
 
-c++14 (**recommend c++20**)
+c++20
 
 ## Usage
 
@@ -159,8 +159,7 @@ std::array<BB, 2> b = {BB(1, "first", true), BB(2, "second", false)};
 icurve::copy(a, b);
 ```
 
-c++20 span
-note: the minimum c++ standard is c++20
+span
 
 ```c++
 AA a[3];

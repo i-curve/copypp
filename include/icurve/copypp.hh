@@ -1,16 +1,14 @@
 #pragma once
-#if (_MSC_VER && _MSVC_LANG < 201402L) || __cplusplus < 201402L
-#error "minimun c++ version is c++14."
+#if (_MSC_VER && _MSVC_LANG < 202002L) || __cplusplus < 202002L
+#error "minimun c++ version is c++20."
 #endif
 
-#define COPYPP_VERSION 000201
+#define COPYPP_VERSION 000300
 
 #include <string>
 #include <vector>
 #include <vector>
-#if (_MSC_VER && _MSVC_LANG >= 201703L) || __cplusplus >= 202002L
 #include <span>
-#endif
 #include "meta.hh"
 
 #ifndef NLOHMANN_DEFINE_TYPE_INTRUSIVE_WITH_DEFAULT
@@ -34,6 +32,16 @@ public:
 };
 
 template <typename D, typename S> void copy(D &destination, S &source) {
+    static_assert(std::is_convertible<S, D>::value, "Can't copy");
+    destination = source;
+}
+
+template <typename D, typename S>
+requires requires(D d, S s) {
+    d._prepareFields();
+    s._prepareFields();
+}
+void copy(D &destination, S &source) {
     source._prepareFields();
     destination._prepareFields();
     for (auto dest : destination._data) {

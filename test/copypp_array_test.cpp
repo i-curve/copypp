@@ -11,12 +11,35 @@
 #include "A.h"
 #include "B.h"
 
+TEST(COPYPP_ARRAY, TEXT_KNOW) {
+    if (std::is_convertible<int, double>::value) {
+        std::cout << "can change int to double\n";
+    } else {
+        std::cout << "can't change int to double\n";
+    }
+    if (std::is_convertible<double, int>::value) {
+        std::cout << "cant chagne double to int\n";
+    } else {
+        std::cout << "can't change double to int\n";
+    }
+}
+
 TEST(COPYPP_ARRAY, _1) {
     AA a[3];
     BB b[2] = {BB(1, "first", true), BB(2, "second", false)};
 
     icurve::copy(a, b);
     // std::copy();
+}
+
+TEST(COPYPP_ARRAY, _2) {
+    A a = {3, "minal a", false};
+    B b;
+    /// compile error
+    // icurve::copy(b, a);
+    int c = 25;
+    int d;
+    // icurve::copy(d, c);
 }
 
 TEST(COPYPP_ARRAY, tmp) {
