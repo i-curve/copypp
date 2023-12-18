@@ -151,7 +151,7 @@ BB b[2] = {BB(1, "first", true), BB(2, "second", false)};
 icurve::copy<AA, 3, BB, 2>(a, b);
 ```
 
-c++ array
+c++ style array
 
 ```c++
 std::array<AA,3> a;

@@ -1,11 +1,9 @@
 #pragma once
-#if _MSC_VER && _MSVC_LANG < 201402L
-#error "minimun c++ version is c++14."
-#elif __cplusplus < 201402L
+#if (_MSC_VER && _MSVC_LANG < 201402L) || __cplusplus < 201402L
 #error "minimun c++ version is c++14."
 #endif
 
-#define COPYPP_VERSION 000200
+#define COPYPP_VERSION 000201
 
 #include <string>
 #include <vector>

@@ -1,11 +1,9 @@
 #pragma once
-#if _MSC_VER && _MSVC_LANG < 201402L
-#error "minimun c++ version is c++14."
-#elif __cplusplus < 201402L
+#if (_MSC_VER && _MSVC_LANG < 201402L) || __cplusplus < 201402L
 #error "minimun c++ version is c++14."
 #endif
 
-#define COPYPP_VERSION 000200
+#define COPYPP_VERSION 000201
 
 #include <string>
 #include <vector>
@@ -78,8 +76,6 @@ void copy(std::span<D, L1> destination, std::span<S, L2> source) {
 template <typename D, typename S>
 void copy(std::vector<D> &destination, std::vector<S> &source) {
     destination.clear();
-    if (source.empty())
-        return;
     for (auto &item : source) {
         D tmp;
         copy(tmp, item);
