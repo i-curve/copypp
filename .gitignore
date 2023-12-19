@@ -2,9 +2,9 @@
 .idea
 .vs
 
-build/*
+build*
 data.h
 
-cmake-build-debug
-cmake-build-release
+cmake-build-debug*
+cmake-build-release*
 out
