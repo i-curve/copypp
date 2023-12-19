@@ -1,5 +1,5 @@
 #pragma once
-#if (_MSC_VER && _MSVC_LANG < 202002L) || __cplusplus < 202002L
+#if (_MSC_VER && _MSVC_LANG < 202002L) || (!_MSC_VER && __cplusplus < 202002L)
 #error "minimun c++ version is c++20."
 #endif
 
@@ -15,7 +15,6 @@
 #endif
 
 namespace icurve {
-
 class _copypp_raw_meta {
 public:
     std::string field_type = "";
@@ -79,7 +78,7 @@ requires requires(D d, S s) {
     std::ranges::end(d);
 }
 void copy(D &destination, S &source) {
-    for (auto dp = destination.begin(), sp = source.begin();
+    for (auto [dp, sp] = std::make_tuple(destination.begin(), source.begin());
          dp != destination.end() && sp != source.end(); ++dp, ++sp) {
         icurve::copy(*dp, *sp);
     }

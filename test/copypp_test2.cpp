@@ -6,6 +6,7 @@
  */
 #include <fmt/core.h>
 #include <cassert>
+#include <gtest/gtest.h>
 #include "icurve/copypp.hh"
 #include "A.h"
 #include "B.h"
@@ -14,13 +15,6 @@ void check();
 void check1();
 void check2();
 
-int main() {
-    fmt::println("copypp test2...");
-    check1();
-    check2();
-    return 0;
-}
-
 void check(BB &b, AA &a) {
     assert(a.getId() == b.getId());
     fmt::println("a.name: {}, b.name: {}", a.getName(), b.getName());
@@ -28,7 +22,7 @@ void check(BB &b, AA &a) {
     assert(a.getSex() == b.getSex());
 }
 
-void check1() {
+TEST(COPYPP_TEST2, _1) {
     fmt::println("check1:");
     AA a(10, "curve", false);
     a._prepareFields();
@@ -38,7 +32,7 @@ void check1() {
     }
 }
 
-void check2() {
+TEST(COPYPP_TEST2, _2) {
     AA a(10, "curve", true);
     BB b;
     icurve::copy(b, a);

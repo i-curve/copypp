@@ -7,6 +7,7 @@
 #include <fmt/core.h>
 #include <cassert>
 #include <list>
+#include <array>
 #include <icurve/copypp_only.hh>
 #include <gtest/gtest.h>
 

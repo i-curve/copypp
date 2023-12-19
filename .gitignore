@@ -1,3 +1,10 @@
 .vscode/*
+.idea
+.vs
+
 build/*
 data.h
+
+cmake-build-debug
+cmake-build-release
+out

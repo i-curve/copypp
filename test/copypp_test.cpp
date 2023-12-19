@@ -6,6 +6,7 @@
  */
 #include <fmt/core.h>
 #include <cassert>
+#include <gtest/gtest.h>
 #include "icurve/copypp.hh"
 #include "A.h"
 #include "B.h"
@@ -33,7 +34,7 @@ void checkaa() {
 }
 
 // COPYPP
-int main() {
+TEST(COPYPP_TEST1, _1) {
     fmt::println("copypp test...");
     A a(1, "curve", true);
     B b;
@@ -41,5 +42,4 @@ int main() {
     check(b, a);
 
     checkaa();
-    return 0;
 }
