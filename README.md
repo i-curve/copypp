@@ -3,7 +3,7 @@
 [![cMake on multiple platforms](https://github.com/i-curve/copypp/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/i-curve/copypp/actions/workflows/cmake-multi-platform.yml)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/nlohmann/json/master/LICENSE.MIT)
 
-support field copy in different c++ struct.
+support field copy in different c++ data type.
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
@@ -12,8 +12,8 @@ support field copy in different c++ struct.
 - [COPYPP](#copypp)
   - [Required](#required)
   - [Usage](#usage)
-    - [struct](#struct)
-    - [COPY JSON string](#copy-json-string)
+    - [struct/class](#structclass)
+    - [json string](#json-string)
     - [array copy](#array-copy)
   - [Integration](#integration)
     - [copy the single header file](#copy-the-single-header-file)
@@ -40,7 +40,7 @@ include the header file
 #include <icurve/copypp.hh>
 ```
 
-### struct
+### struct/class
 
 COPYPP_FIELDS_NON_INTRUSIVE
 defination the need to copy class
@@ -121,7 +121,7 @@ BB b;
 icurve::copy(b, a);
 ```
 
-### COPY JSON string
+### json string
 
 copypp support copy between json's string and struct, this copy depency [nlohmann-json](https://github.com/nlohmann/json) library, so you need
 
@@ -159,12 +159,22 @@ std::array<BB, 2> b = {BB(1, "first", true), BB(2, "second", false)};
 icurve::copy(a, b);
 ```
 
-span
+stl support
+
+copypp support stl copy, condition:
+
+> 1. the source has forward end iterator(begin, end)
+> 2. the destiontion has forward iterator(begin, and)
+> 3. if the destination has back_insert_iterator, copypp will copy the all source item. Otherwise, it only copy the minimum length between source and destination
+
+copypp can copy it, even in a different stl type.
 
 ```c++
 AA a[3];
 BB b[2] = {BB(1, "first", true), BB(2, "second", false)};
-icurve::copy(std::span<AA>(a), std::span<BB>(b));
+std::span<AA> aa(a);
+std::span<BB> bb(b);
+icurve::copy(aa, bb);
 ```
 
 If it's vector, you can directly use it.
@@ -173,6 +183,24 @@ If it's vector, you can directly use it.
 vector<AA> a;
 vector<BB> b = {BB(1, "first", true), BB(2, "second", false)};
 icurve::copy(a, b);
+```
+
+different stl type
+
+if the destionation can append item, it will clear destionation and append new item.
+
+```c++
+std::vector<AA> a = {AA(1, "first", true), AA(2, "second", false)};
+std::list<BB> b; // copy all items
+icurve::copy(b, a);
+```
+
+```c++
+std::vector<AA> a = {AA(1, "first", true), AA(2, "second", false)};
+std::array<BB, 1> b;
+std::array<BB, 3> c;
+icurve::copy(b, a); // will copy 1 item(min(a.size(), b.size())
+icurve::copy(c, a); // will copy 2 items(min(a.size(), c.size()))
 ```
 
 ## Integration

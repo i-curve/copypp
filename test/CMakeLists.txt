@@ -17,7 +17,7 @@ target_link_directories(copypp_test2 PUBLIC ${PROJECT_SOURCE_DIR}/include)
 add_test(NAME copypp_test2 COMMAND copypp_test2)
 
 add_executable(copypp_only_test copypp_only_test.cpp)
-target_link_libraries(copypp_only_test PRIVATE fmt::fmt-header-only)
+target_link_libraries(copypp_only_test PRIVATE fmt::fmt-header-only GTest::gtest GTest::gtest_main)
 target_link_directories(copypp_only_test PUBLIC ${PROJECT_SOURCE_DIR}/include)
 add_test(NAME copypp_only_test COMMAND copypp_only_test)
 
@@ -38,3 +38,8 @@ add_executable(copypp_array_test copypp_array_test.cpp)
 target_link_libraries(copypp_array_test PRIVATE GTest::gtest GTest::gtest_main)
 target_link_directories(copypp_array_test PUBLIC ${PROJECT_SOURCE_DIR}/include)
 add_test(NAME copypp_array_test COMMAND copypp_array_test)
+
+add_executable(copypp_stl_test copypp_stl_test.cpp)
+target_link_libraries(copypp_stl_test PRIVATE fmt::fmt-header-only GTest::gtest GTest::gtest_main)
+target_link_directories(copypp_stl_test PUBLIC ${PROJECT_SOURCE_DIR}/include)
+add_test(NAME copypp_stl_test COMMAND copypp_stl_test)

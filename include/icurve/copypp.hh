@@ -7,8 +7,7 @@
 
 #include <string>
 #include <vector>
-#include <vector>
-#include <span>
+#include <ranges>
 #include "meta.hh"
 
 #ifndef NLOHMANN_DEFINE_TYPE_INTRUSIVE_WITH_DEFAULT
@@ -64,33 +63,43 @@ void copy(D (&destination)[L1], S (&source)[L2]) {
     }
 }
 
-template <typename D, size_t L1, typename S, size_t L2>
-void copy(std::array<D, L1> &destination, std::array<S, L2> &source) {
-    size_t len = std::min(L1, L2);
-    for (int i = 0; i < len; i++) {
-        icurve::copy(destination[i], source[i]);
+template <typename T>
+concept PushBackType = requires(T t) {
+    t.clear();
+    t.push_back(std::declval<typename T::value_type>());
+};
+template <typename T>
+concept NoPushBackType = !PushBackType<T>;
+
+template <NoPushBackType D, typename S>
+requires requires(D d, S s) {
+    std::ranges::begin(s);
+    std::ranges::end(s);
+    std::ranges::begin(d);
+    std::ranges::end(d);
+}
+void copy(D &destination, S &source) {
+    for (auto dp = destination.begin(), sp = source.begin();
+         dp != destination.end() && sp != source.end(); ++dp, ++sp) {
+        icurve::copy(*dp, *sp);
     }
 }
 
-#if (_MSC_VER && _MSVC_LANG >= 201703L) || __cplusplus >= 202002L
-template <typename D, size_t L1, typename S, size_t L2>
-void copy(std::span<D, L1> destination, std::span<S, L2> source) {
-    size_t len = std::min(L1, L2);
-    for (int i = 0; i < len; i++) {
-        icurve::copy(destination[i], source[i]);
-    }
+template <PushBackType D, typename S>
+requires requires(D d, S s) {
+    std::ranges::begin(s);
+    std::ranges::end(s);
+    std::ranges::begin(d);
+    std::ranges::end(d);
 }
-
-template <typename D, typename S>
-void copy(std::vector<D> &destination, std::vector<S> &source) {
+void copy(D &destination, S &source) {
     destination.clear();
+    typename D::value_type tmp;
     for (auto &item : source) {
-        D tmp;
         copy(tmp, item);
         destination.push_back(tmp);
     }
 }
-#endif
 
 #ifdef NLOHMANN_DEFINE_TYPE_INTRUSIVE
 // copy josn string to struct.

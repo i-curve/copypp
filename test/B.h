@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <cassert>
+#include "A.h"
 
 class B {
 public:
@@ -32,3 +34,15 @@ public:
 public:
     COPYPP_FIELDS_INTRUSIVE(BB, id, name, sex)
 };
+
+void checkA(A a, B b) {
+    assert(a.id == b.id);
+    assert(a.name == b.name);
+    assert(a.sex == b.sex);
+}
+
+void checkAA(AA a, BB b) {
+    assert(a.getId() == b.getId());
+    assert(a.getName() == b.getName());
+    assert(a.getSex() == b.getSex());
+}
