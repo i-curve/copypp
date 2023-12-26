@@ -1,6 +1,8 @@
 # COPYPP
 
 [![cMake on multiple platforms](https://github.com/i-curve/copypp/actions/workflows/cmake-multi-platform.yml/badge.svg)](https://github.com/i-curve/copypp/actions/workflows/cmake-multi-platform.yml)
+[![Vcpkg Version](https://img.shields.io/vcpkg/v/copypp)](https://vcpkg.link/ports/copypp)
+[![Conan Center](https://img.shields.io/conan/v/copypp)](https://conan.io/center/recipes/copypp)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/nlohmann/json/master/LICENSE.MIT)
 
 support field copy in different c++ data type.
@@ -15,6 +17,7 @@ support field copy in different c++ data type.
     - [struct/class](#structclass)
     - [json string](#json-string)
     - [array copy](#array-copy)
+    - [stl support](#stl-support)
   - [Integration](#integration)
     - [copy the single header file](#copy-the-single-header-file)
     - [cmake](#cmake)
