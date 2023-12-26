@@ -22,6 +22,7 @@ support field copy in different c++ data type.
     - [copy the single header file](#copy-the-single-header-file)
     - [cmake](#cmake)
     - [vcpkg](#vcpkg)
+    - [conan](#conan)
   - [License](#license)
 
 <!-- /code_chunk_output -->
@@ -244,6 +245,15 @@ if you use the vcpkg, you can install it by
 
 ```
 vcpkg install copypp
+```
+
+### conan
+
+conanfile.txt
+
+```txt
+[requires]
+copypp/[version]
 ```
 
 ## License
